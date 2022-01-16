@@ -546,25 +546,18 @@ let search = function (arr, target) {
   return -1;
 }
 
-console.log(search(nums, 34))
-
+search(nums, 34)
 ```
+TC => $O(log{_2}(n))$ <br>
+SC => O(1) --- This means that we don't save any data structures in memory
 
-Testing some charts
-```mermaid
-graph LR
-    A[README.md]
-    B{Find mermaid graphs<br>and image paths}
-    C[[docker mermaid-cli]]
-    D[[docker mermaid-cli]]
-    E(Graph 1 png image)
-    F(Graph 2 svg image)
+---
 
-    A -->|passed to| B
-    subgraph render-md-mermaid.sh
-      B --> |path/to/image1.png<br>+mermaid source| C
-      B --> |path/to/image2.svg<br>+mermaid source| D
-    end
-    C --> E
-    D --> F
+### 2D Arrays
+```ts
+let x: Array<number> = new Array(2);
+
+for (let i = 0; i < x.length; i++) {
+  x[i] = new Array(2);
+}
 ```

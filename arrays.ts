@@ -29,3 +29,18 @@ let search = function (arr, target) {
 }
 
 console.log(search(nums, 34))
+
+
+
+let x: Array<number> = new Array(2);
+
+for (let i = 0; i < x.length; i++) {
+  x[i] = new Array(2);
+}
+
+x[0][0] = 1
+x[0][1] = 2
+x[1][0] = 3
+x[1][1] = 4
+
+console.log(x)
