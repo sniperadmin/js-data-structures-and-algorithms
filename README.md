@@ -655,10 +655,10 @@ direction LR
 ```mermaid
 stateDiagram-v2
 direction LR
-0x001 --> 2 
-2 --> 3
-3 --> 4
-4 --> 5
+0x001 --> 0x002 
+0x002 --> 0x003
+0x003 --> 0x004
+0x004 --> 0x005
 
 note right of 0x001
     Head Node
@@ -669,20 +669,26 @@ note left of 0x005
 end note
 
 state 0x001 {
-    1
+    direction LR
+    1 --> (0x002)
 }
 state 0x002 {
-    2
+    direction LR
+    2 --> (0x003)
 }
 state 0x003 {
-    3
+    direction LR
+    3 --> (0x004)
 }
 state 0x004 {
-    4
+    direction LR
+    4 --> (0x005)
 }
 state 0x005 {
-    5
+    direction LR
+    5 --> (0x006)
 }
+
 ```
 
 #### Circular Singly Linked List
@@ -691,11 +697,11 @@ state 0x005 {
 ```mermaid
 stateDiagram-v2
 direction LR
-0x001 --> 2
-2 --> 3
-3 --> 4
-4 --> 5
-5 --> 1
+0x001 --> 0x002 
+0x002 --> 0x003
+0x003 --> 0x004
+0x004 --> 0x005
+0x005 --> 0x001
 
 note right of 0x001
     Head Node
@@ -706,19 +712,114 @@ note left of 0x005
 end note
 
 state 0x001 {
-    1
+    direction LR
+    1 --> (0x002)
 }
 state 0x002 {
-    2
+    direction LR
+    2 --> (0x003)
 }
 state 0x003 {
-    3
+    direction LR
+    3 --> (0x004)
 }
 state 0x004 {
-    4
+    direction LR
+    4 --> (0x005)
 }
 state 0x005 {
-    5
+    direction LR
+    5 --> (0x001)
+}
+
+```
+
+### Doubly Linked List
+```mermaid
+stateDiagram-v2
+direction LR
+0x001 --> 0x002 
+0x002 --> 0x003
+0x003 --> 0x004
+0x004 --> 0x005
+
+note right of 0x001
+    Head Node
+end note
+
+note left of 0x005
+    Tail Node
+end note
+
+state 0x001 {
+    direction LR
+    ~~ --> 1
+    1 --> next(0x002)
+}
+state 0x002 {
+    direction LR
+    prev(0x001) --> 2
+    2 --> next(0x003)
+}
+state 0x003 {
+    direction LR
+    prev(0x002) --> 3
+    3 --> next(0x004)
+}
+state 0x004 {
+    direction LR
+    prev(0x003) --> 4
+    4 --> (0x005)
+}
+state 0x005 {
+    direction LR
+    prev(0x004) --> 5
+    5 --> (0x001)
+}
+```
+
+### Circular Doubly Linked List
+```mermaid
+stateDiagram-v2
+direction LR
+0x001 --> 0x002 
+0x002 --> 0x003
+0x003 --> 0x004
+0x004 --> 0x005
+0x005 --> 0x001
+
+note right of 0x001
+    Head Node
+end note
+
+note left of 0x005
+    Tail Node
+end note
+
+state 0x001 {
+    direction LR
+    ~~ --> 1
+    1 --> next(0x002)
+}
+state 0x002 {
+    direction LR
+    prev(0x001) --> 2
+    2 --> next(0x003)
+}
+state 0x003 {
+    direction LR
+    prev(0x002) --> 3
+    3 --> next(0x004)
+}
+state 0x004 {
+    direction LR
+    prev(0x003) --> 4
+    4 --> (0x005)
+}
+state 0x005 {
+    direction LR
+    prev(0x004) --> 5
+    5 --> (0x001)
 }
 ```
 
