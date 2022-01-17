@@ -569,3 +569,156 @@ x[1][1] = 4
 ```
 
 This initialization costs only $O(1)$
+
+---
+
+## Linked List
+It is a dynamic data structure where each element (node) is made up of two items [data and Reference (pointer) that points to the next node].
+
+| Linked List                                 |                                  Array |
+| :------------------------------------------ | -------------------------------------: |
+| Size is not fixed                           |                   size is always fixed |
+| Cannot access a random node                 |               Can access a random node |
+| Stored in a non-consecutive memory location | Stored in a contiguous memory location |
+
+### Array stored in memory
+
+> Because the only ref for each node in the array is the node index itself, the array is stored in memory only in a consecutive memory location.
+
+```mermaid
+  stateDiagram-v2
+  state Array-in-memory {
+    [*] --> [*]
+    a b c d e
+  }
+```
+
+### Linked List visualization
+
+```mermaid
+  erDiagram
+    Node-001 ||--o{ Pointer-to-002 : links
+    Node-001 {
+        number value
+        number hash-002
+    }
+    Node-002 ||--o{ Pointer-to-002 : is
+    Node-002 {
+        number value
+        number hash-003
+    }
+```
+
+### Linked List stored in memory
+It could be something like this. Each node is linked to the next one. but they are scattering in different memory slots.
+
+```mermaid
+  stateDiagram-v2
+direction LR
+    state fork_state <<fork>>
+      [*] --> fork_state
+      fork_state --> a001
+
+    state join_state <<join>>
+        join_state --> c003
+        fork_state --> c003
+        join_state --> d004
+        b002 --> fork_state
+        c003 --> d004
+        a001 --> b002
+        d004 --> [*]
+
+    state a001 {
+        a|b002
+    }
+    state b002 {
+        b|c003
+    }
+    state c003 {
+        c|d004
+    }
+    state d004 {
+        d
+    }
+```
+
+### Types of linked lists
+- [x] Singly Linked List
+- [x] Circular Singly Linked List
+- [x] Doubly Linked List
+- [x] Circular Doubly Linked List
+
+#### Singly Linked List
+- Each node in the linked list stores the data of node and a reference to the next node.
+- Does not store references for previous nodes.
+
+```mermaid
+stateDiagram-v2
+direction LR
+0x001 --> 2 
+2 --> 3
+3 --> 4
+4 --> 5
+
+note right of 0x001
+    Head Node
+end note
+
+note left of 0x005
+    Tail Node
+end note
+
+state 0x001 {
+    1
+}
+state 0x002 {
+    2
+}
+state 0x003 {
+    3
+}
+state 0x004 {
+    4
+}
+state 0x005 {
+    5
+}
+```
+
+#### Circular Singly Linked List
+- End node is connected to the first node
+
+```mermaid
+stateDiagram-v2
+direction LR
+0x001 --> 2
+2 --> 3
+3 --> 4
+4 --> 5
+5 --> 1
+
+note right of 0x001
+    Head Node
+end note
+
+note left of 0x005
+    Tail Node
+end note
+
+state 0x001 {
+    1
+}
+state 0x002 {
+    2
+}
+state 0x003 {
+    3
+}
+state 0x004 {
+    4
+}
+state 0x005 {
+    5
+}
+```
+
