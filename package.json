@@ -1,0 +1,15 @@
+{
+  "name": "js-data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "Full illustration for the concepts with provided excercises and unit tests (WIP)",
+  "repository": "git@github.com:sniperadmin/js-data-structures-and-algorithms.git",
+  "author": "nasrgalal <nasrbue@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsc && node output/index.js"
+  },
+  "dependencies": {
+    "big-o-calculator": "^0.0.3"
+  }
+}
