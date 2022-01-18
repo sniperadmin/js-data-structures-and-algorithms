@@ -9,20 +9,20 @@
   - [Time Factor (Time complexity)](#time-factor-time-complexity)
   - [Space Factor (Space complexity)](#space-factor-space-complexity)
 - [Notations for Run Time Analysis](#notations-for-run-time-analysis)
-  - [Omega Notation $Ω(n)$](#omega-notation-ωn)
-  - [Big O notation $O(n)$](#big-o-notation-on)
-  - [Theta notation $Θ(n)$](#theta-notation-θn)
+  - [Omega Notation ![](https://latex.codecogs.com/svg.image?Ω(n))](#omega-notation-ωn)
+  - [Big O notation ![](https://latex.codecogs.com/svg.image?O(n))](#big-o-notation-on)
+  - [Theta notation ![](https://latex.codecogs.com/svg.image?Θ(n))](#theta-notation-θn)
 - [Guided Examples of Run Time Analysis](#guided-examples-of-run-time-analysis)
 - [Practical examples for all types](#practical-examples-for-all-types)
-  - [Constant time $O(1)$](#constant-time-o1)
-  - [Linear time $O(n)$](#linear-time-on)
-  - [Logarithmic Time $O(log n)$](#logarithmic-time-olog-n)
-  - [Linear Logarithmic Time: $O(n log n)$](#linear-logarithmic-time-on-log-n)
-  - [Quadratic Time: $O(n^2)$](#quadratic-time-on2)
-  - [Cubic Time: $O(n^3)$](#cubic-time-on3)
-  - [Exponential Time $O(2n)$](#exponential-time-o2n)
+  - [Constant time ![](https://latex.codecogs.com/svg.image?O(1))](#constant-time-o1)
+  - [Linear time ![](https://latex.codecogs.com/svg.image?O(n))](#linear-time-on)
+  - [Logarithmic Time ![](https://latex.codecogs.com/svg.image?O(log%20n))](#logarithmic-time-olog-n)
+  - [Linear Logarithmic Time: ![](https://latex.codecogs.com/svg.image?O(n%20log%20n))](#linear-logarithmic-time-on-log-n)
+  - [Quadratic Time: ![](https://latex.codecogs.com/svg.image?O(n^2))](#quadratic-time-on2)
+  - [Cubic Time: ![](https://latex.codecogs.com/svg.image?O(n^3))](#cubic-time-on3)
+  - [Exponential Time ![](https://latex.codecogs.com/svg.image?O(2n))](#exponential-time-o2n)
   - [(Example => brute forcing algorithm [Backtracking])](#example--brute-forcing-algorithm-backtracking)
-  - [Factorial Time $O(n!)$](#factorial-time-on)
+  - [Factorial Time ![](https://latex.codecogs.com/svg.image?O(n!))](#factorial-time-on)
 - [Digging deeper in calculation of time complexity](#digging-deeper-in-calculation-of-time-complexity)
   - [Example #1](#example-1)
   - [Example #2](#example-2)
@@ -82,37 +82,37 @@ amount of memory required used by an algorithm
 ---
 
 # Notations for Run Time Analysis
-- Omega Notation $Ω(n)$ -- Best Case
-- Big O Notation $O(n)$ -- Worst Case
-- Theta Notation $Θ(n)$ -- Average Case
+- Omega Notation ![](https://latex.codecogs.com/svg.image?Ω(n)) -- Best Case
+- Big O Notation ![](https://latex.codecogs.com/svg.image?O(n)) -- Worst Case
+- Theta Notation ![](https://latex.codecogs.com/svg.image?Θ(n)) -- Average Case
 
-## Omega Notation $Ω(n)$
+## Omega Notation ![](https://latex.codecogs.com/svg.image?Ω(n))
 - Gives Lower bound of an algorithm
 - Used to measure the best case of the algorithm
 
-## Big O notation $O(n)$
+## Big O notation ![](https://latex.codecogs.com/svg.image?O(n))
 - Gives Upper bound of an algorithm
 - Used to measure the worst case of the algorithm
 
-## Theta notation $Θ(n)$
+## Theta notation ![](https://latex.codecogs.com/svg.image?Θ(n))
 - Gives average for both Lower & Upper bound of an algorithm
 - Used to measure the average case of the algorithm
 
 # Guided Examples of Run Time Analysis
 | Complexity   |        Name        |                                            Example |
 | :----------- | :----------------: | -------------------------------------------------: |
-| $O(1)$       |      Constant      |           Adding element in front of a linked list |
-| $O(log n)$   |    Logarithmic     | Searching an element in a sorted arr / linked list |
-| $O(n)$       |       Linear       |              Searching element in a unsorted array |
-| $O(n log n)$ | Linear algorithmic |                               Merge sort algorithm |
-| $O(n^2)$     |     Quadratic      |          shortest path between 2 points in a graph |
-| $O(n^3)$     |       Cubic        |                              Matrix Multiplication |
-| $O(2^n)$     |    Exponential     |       Naive solution for the nth Fibonacci problem |
-| $O(n!)$      |     Factorial      |     Naive solution for travelling salesman problem |
+| ![](https://latex.codecogs.com/svg.image?O(1))       |      Constant      |           Adding element in front of a linked list |
+| ![](https://latex.codecogs.com/svg.image?O(log%20n))   |    Logarithmic     | Searching an element in a sorted arr / linked list |
+| ![](https://latex.codecogs.com/svg.image?O(n))       |       Linear       |              Searching element in a unsorted array |
+| ![](https://latex.codecogs.com/svg.image?O(n%20log%20n)) | Linear algorithmic |                               Merge sort algorithm |
+| ![](https://latex.codecogs.com/svg.image?O(n^2))     |     Quadratic      |          shortest path between 2 points in a graph |
+| ![](https://latex.codecogs.com/svg.image?O(n^3))     |       Cubic        |                              Matrix Multiplication |
+| ![](https://latex.codecogs.com/svg.image?O(2^n))     |    Exponential     |       Naive solution for the nth Fibonacci problem |
+| ![](https://latex.codecogs.com/svg.image?O(n!))      |     Factorial      |     Naive solution for travelling salesman problem |
 
 ---
 # Practical examples for all types
-## Constant time $O(1)$
+## Constant time ![](https://latex.codecogs.com/svg.image?O(1))
   - It is not affected by the size of an input
       ```ts
         function (n: number): number {
@@ -122,7 +122,7 @@ amount of memory required used by an algorithm
         }
       ```
 ---
-## Linear time $O(n)$
+## Linear time ![](https://latex.codecogs.com/svg.image?O(n))
   - Performs n of operations as it accepts n input size
   ```ts
   let nums: object = {1,2,3,4,5,6}
@@ -131,7 +131,7 @@ amount of memory required used by an algorithm
   }
   ```
 ---
-## Logarithmic Time $O(log n)$
+## Logarithmic Time ![](https://latex.codecogs.com/svg.image?O(log%20n))
   - Algo than has running time O(log n) si slightly faster than O(n) [Example Binary Search algo]
   ```js
   const binarySearch = function (nums, target) { // -- T(n)
@@ -156,24 +156,24 @@ amount of memory required used by an algorithm
 
   ```
 To calculate time complexity <br>
-  1....... $length = n = n/2^0$ <br>
-  2....... $length = n = n/2^1$ <br>
-  3....... $length = n = n/2^2$ <br>
-  4....... $length = n = n/2^3$ <br>
-  k....... $length = n = n/2^k$ <br>
+  1....... ![](https://latex.codecogs.com/svg.image?length%20=%20n%20=%20n/2^0) <br>
+  2....... ![](https://latex.codecogs.com/svg.image?length%20=%20n%20=%20n/2^1) <br>
+  3....... ![](https://latex.codecogs.com/svg.image?length%20=%20n%20=%20n/2^2) <br>
+  4....... ![](https://latex.codecogs.com/svg.image?length%20=%20n%20=%20n/2^3) <br>
+  k....... ![](https://latex.codecogs.com/svg.image?length%20=%20n%20=%20n/2^k) <br>
 
 
-  After k division length = $n/2^k = 1$ <br>
-  $n = 2^k$ <br>
-  $log{_2}(n) = log{_2}(2^k)$ <br>
-  $log{_2}(n) = k*log{_2}(2)$ <br>
-  $k = log{_2}(n)$ <br>
+  After k division length = ![](https://latex.codecogs.com/svg.image?n/2^k%20=%201) <br>
+  ![](https://latex.codecogs.com/svg.image?n%20=%202^k) <br>
+  ![](https://latex.codecogs.com/svg.image?log{_2}(n)%20=%20log{_2}(2^k)) <br>
+  ![](https://latex.codecogs.com/svg.image?log{_2}(n)%20=%20k*log{_2}(2)) <br>
+  ![](https://latex.codecogs.com/svg.image?k%20=%20log{_2}(n)) <br>
 
-TC => $O(log{_2}(n))$ <br>
-SC => $O(1)$
+TC => ![](https://latex.codecogs.com/svg.image?O(log{_2}(n))) <br>
+SC => ![](https://latex.codecogs.com/svg.image?O(1))
 
 ---
-## Linear Logarithmic Time: $O(n log n)$
+## Linear Logarithmic Time: ![](https://latex.codecogs.com/svg.image?O(n%20log%20n))
 It divides the problem into sub problems and then merges them in n time 
 (Example => Merge & sort algorithm)
 
@@ -191,31 +191,31 @@ function merge() {// -- O(n)}
 ```
 **Solving it: **<br>
 
-$T(n) = O(1) + O(1) + T(n/2) + T(n/2) + n$ <br>
-$T(n) = 2T(n/2) + n$ **---->> eq.1**<br>
+![](https://latex.codecogs.com/svg.image?T(n)%20=%20O(1)%20+%20O(1)%20+%20T(n/2)%20+%20T(n/2)%20+%20n) <br>
+![](https://latex.codecogs.com/svg.image?T(n)%20=%202T(n/2)%20+%20n) **---->> eq.1**<br>
 
 --> **Divide n by 2** <br>
 
-$T(n/2) = 2T(n/4) + n/2$ **---->> eq.2**<br>
+![](https://latex.codecogs.com/svg.image?T(n/2)%20=%202T(n/4)%20+%20n/2) **---->> eq.2**<br>
 
 **substitute eq.2 in eq.1** <br>
-$T(n) = 4 *  T(n/4) + 2 * n$ <br>
+![](https://latex.codecogs.com/svg.image?T(n)%20=%204%20*%20%20T(n/4)%20+%202%20*%20n) <br>
 
 **substitute n by n/4 in eq.1** <br>
-$T(n/4) = 2 T(n/8) + n/4$ **---->> eq.3**<br>
+![](https://latex.codecogs.com/svg.image?T(n/4)%20=%202%20T(n/8)%20+%20n/4) **---->> eq.3**<br>
 
 <div class="alert">
   <b>Pattern will be: </b> <br>
-  $T(n) = 2^i * T(n/2^i) + i * n$ <br>
+  ![](https://latex.codecogs.com/svg.image?T(n)%20=%202^i%20*%20T(n/2^i)%20+%20i%20*%20n) <br>
 </div>
 
-let $n/2^i = 1$ <br>
+let ![](https://latex.codecogs.com/svg.image?n/2^i%20=%201) <br>
 
-$n = 2^i$
+![](https://latex.codecogs.com/svg.image?n%20=%202^i)
 
-$log{_2}(n) = log{_2}(2^i)$
+![](https://latex.codecogs.com/svg.image?log{_2}(n)%20=%20log{_2}(2^i))
 
-$log{_2}(n) = i$
+![](https://latex.codecogs.com/svg.image?log{_2}(n)%20=%20i)
 
 after substituting in the discovered pattern
 
@@ -227,7 +227,7 @@ after substituting in the discovered pattern
 
 ---
 
-## Quadratic Time: $O(n^2)$
+## Quadratic Time: ![](https://latex.codecogs.com/svg.image?O(n^2))
 Bubble sort algorithm takes quadratic time complexity (loop nested inside a loop)
 
 ```js
@@ -239,8 +239,8 @@ for (let i = 0; i < n; i++) { // o(n)
 ```
 ---
 
-## Cubic Time: $O(n^3)$
-Same principle of $O(n^2)$
+## Cubic Time: ![](https://latex.codecogs.com/svg.image?O(n^3))
+Same principle of ![](https://latex.codecogs.com/svg.image?O(n^2))
 
 ```js
 for (let i = 0; i < n; i++) { // o(n)
@@ -253,12 +253,12 @@ for (let i = 0; i < n; i++) { // o(n)
 } // -- total O(n^3)
 ```
 
-## Exponential Time $O(2n)$
+## Exponential Time ![](https://latex.codecogs.com/svg.image?O(2n))
 Very slow algo as input grows up. If n = 100,000 .. then T(n) would be 21000000.
 (Example => brute forcing algorithm [Backtracking])
 ---
 
-## Factorial Time $O(n!)$
+## Factorial Time ![](https://latex.codecogs.com/svg.image?O(n!))
 Slowest EVER!
 
 ---
@@ -271,7 +271,7 @@ for (let i = 0; i < 10; i++) { // -- O(n)
   console.log(i) // -- O(1)
 }
 ```
-$T(n) = n/2 = n$ --- Reject any constants --- <br>
+![](https://latex.codecogs.com/svg.image?T(n)%20=%20n/2%20=%20n) --- Reject any constants --- <br>
 
 TC => O(n) <br>
 SC => O(1) --- This means that we don't save any data structures in memory
@@ -309,9 +309,9 @@ for (let i = 0; i < 10; i++) { // -- O(n)
 <p>Result will be</p>
 </div>
 
-$1+2+3+4+5+6+n = n(n-1)/2 = (n^2 + n)/2$ <br>
+![](https://latex.codecogs.com/svg.image?1+2+3+4+5+6+n%20=%20n(n-1)/2%20=%20(n^2%20+%20n)/2) <br>
 
-TC => $O(n^2)$ <br>
+TC => ![](https://latex.codecogs.com/svg.image?O(n^2)) <br>
 SC => O(1) --- This means that we don't save any data structures in memory
 
 ---
@@ -335,11 +335,11 @@ for (let i = 0; p <= n; i += p) { // -- O(root n)
 
 Taking the stop condition if p > n
 
-$p = 1+2+3+4+5+...+k = k(k+1)/2 = (k^2+k)/2$ <br>
+![](https://latex.codecogs.com/svg.image?p%20=%201+2+3+4+5+...+k%20=%20k(k+1)/2%20=%20(k^2+k)/2) <br>
 
-Then, $(k^2+ k)/2 > n$ <br>
-Then, $k^2 > n$ <br>
-Then, $k > \sqrt{n}$ <br>
+Then, ![](https://latex.codecogs.com/svg.image?(k^2+%20k)/2%20>%20n) <br>
+Then, ![](https://latex.codecogs.com/svg.image?k^2%20>%20n) <br>
+Then, ![](https://latex.codecogs.com/svg.image?k%20>%20\sqrt{n}) <br>
 
 TC => O(n) <br>
 SC => O(1) --- This means that we don't save any data structures in memory
@@ -355,20 +355,20 @@ for (let i = 0; i < n; i *=2) { // -- O(n)
 | i    |   j   |
 | :--- | :---: |
 | 0    |       |
-| 1    | $2^1$ |
-| 2    | $2^2$ |
-| 3    | $2^3$ |
-| 4    | $2^4$ |
+| 1    | ![](https://latex.codecogs.com/svg.image?2^1) |
+| 2    | ![](https://latex.codecogs.com/svg.image?2^2) |
+| 3    | ![](https://latex.codecogs.com/svg.image?2^3) |
+| 4    | ![](https://latex.codecogs.com/svg.image?2^4) |
 | ...  |  ...  |
-| k    | $2^k$ |
+| k    | ![](https://latex.codecogs.com/svg.image?2^k) |
 
 Taking the stop condition if i >= n
-$i = 2^k$ <br>
-Then $2^k >=n$ <br>
-Then $log{_2}(2^k) = log{_2}(n)$ <br>
-Then $k = log{_2}(n)$ <br>
+![](https://latex.codecogs.com/svg.image?i%20=%202^k) <br>
+Then ![](https://latex.codecogs.com/svg.image?2^k%20>=n) <br>
+Then ![](https://latex.codecogs.com/svg.image?log{_2}(2^k)%20=%20log{_2}(n)) <br>
+Then ![](https://latex.codecogs.com/svg.image?k%20=%20log{_2}(n)) <br>
 
-TC => $O(log{_2}(n))$ <br>
+TC => ![](https://latex.codecogs.com/svg.image?O(log{_2}(n))) <br>
 SC => O(1) --- This means that we don't save any data structures in memory
 
 ---
@@ -382,22 +382,22 @@ for (let i = 0; i <= 1; i /=2) { // -- O(n)
 | i    |    j    |
 | :--- | :-----: |
 | 0    |         |
-| 1    | n/$2^1$ |
-| 2    | n/$2^2$ |
-| 3    | n/$2^3$ |
-| 4    | n/$2^4$ |
+| 1    | n/![](https://latex.codecogs.com/svg.image?2^1) |
+| 2    | n/![](https://latex.codecogs.com/svg.image?2^2) |
+| 3    | n/![](https://latex.codecogs.com/svg.image?2^3) |
+| 4    | n/![](https://latex.codecogs.com/svg.image?2^4) |
 | ...  | n/ ...  |
-| k    | n/$2^k$ |
+| k    | n/![](https://latex.codecogs.com/svg.image?2^k) |
 
 Taking the stop condition if i < 1
-$i = n/2^k$ <br>
-Then $1 >=n/2^k$ <br>
-Then $2^k >=n$ <br>
+![](https://latex.codecogs.com/svg.image?i%20=%20n/2^k) <br>
+Then ![](https://latex.codecogs.com/svg.image?1%20>=n/2^k) <br>
+Then ![](https://latex.codecogs.com/svg.image?2^k%20>=n) <br>
 
-Then $log{_2}(2^k) > log{_2}(n)$ <br>
-Then $k > log{_2}(n)$ <br>
+Then ![](https://latex.codecogs.com/svg.image?log{_2}(2^k)%20>%20log{_2}(n)) <br>
+Then ![](https://latex.codecogs.com/svg.image?k%20>%20log{_2}(n)) <br>
 
-TC => $O(log{_2}(n))$ <br>
+TC => ![](https://latex.codecogs.com/svg.image?O(log{_2}(n))) <br>
 SC => O(1) --- This means that we don't save any data structures in memory
 
 ---
@@ -407,13 +407,13 @@ for (let i = 0; i*i < n; i++) { // -- O(n)
   console.log(i) // -- O(1)
 }
 ```
-This will stop if -- $i*i = n$
+This will stop if -- ![](https://latex.codecogs.com/svg.image?i*i%20=%20n)
 
-$i * i = n$ <br>
-Then $i^2 >=n$ <br>
-Then $i >=\sqrt{n}$ <br>
+![](https://latex.codecogs.com/svg.image?i%20*%20i%20=%20n) <br>
+Then ![](https://latex.codecogs.com/svg.image?i^2%20>=n) <br>
+Then ![](https://latex.codecogs.com/svg.image?i%20>=\sqrt{n}) <br>
 
-TC => $O(\sqrt{n})$ <br>
+TC => ![](https://latex.codecogs.com/svg.image?O(\sqrt{n})) <br>
 SC => O(1) --- This means that we don't save any data structures in memory
 
 ---
@@ -430,11 +430,11 @@ Array is a data structure that contains a group of elements, each is identified 
 - Size of array need to be specified and cannot be changed
 
 ### Example
-- Simple Array => $[1, 2, 3, 4, 5, 6, ....]$
+- Simple Array => ![](https://latex.codecogs.com/svg.image?[1,%202,%203,%204,%205,%206,%20....])
 
 ### Types of Array
-- One Dimensional Array => $[1, 2, 3, 4, 5, 6, ....]$
-- Multi-dimenstional Array => $[[], [], [], [], []]$
+- One Dimensional Array => ![](https://latex.codecogs.com/svg.image?[1,%202,%203,%204,%205,%206,%20....])
+- Multi-dimenstional Array => ![](https://latex.codecogs.com/svg.image?[[],%20[],%20[],%20[],%20[]])
 
 #### One Dimensional Array
 Each element is represented by a single subscript. Elements are stored in consecutive memory location
@@ -442,7 +442,7 @@ Each element is represented by a single subscript. Elements are stored in consec
 #### Two Dimensional Array
 Each element is represented by two subscripts. The Two-dimensional array `mxn` has `m` Rows and `n` columns and contains `m*n` elements.
 
-for instance `3X4` Array => $[[1,2,3,4], [5,6,7,8], [9,10,11,12]]$
+for instance `3X4` Array => ![](https://latex.codecogs.com/svg.image?[[1,2,3,4],%20[5,6,7,8],%20[9,10,11,12]])
 
 ### How Array is stored in RAM (Random Accessed Memory)
 #### 1D Array
@@ -612,7 +612,7 @@ let search = function (arr, target) {
 search(nums, 34)
 
 ```
-TC => $O(log{_2}(n))$ <br>
+TC => ![](https://latex.codecogs.com/svg.image?O(log{_2}(n))) <br>
 SC => O(1) --- This means that we don't save any data structures in memory
 
 ---
@@ -631,7 +631,7 @@ x[1][0] = 3
 x[1][1] = 4
 ```
 
-This initialization costs only $O(1)$
+This initialization costs only ![](https://latex.codecogs.com/svg.image?O(1))
 
 ---
 
