@@ -16,7 +16,7 @@ jobs:
           output-dir: "."
 
       - name: Stage changes
-      - run: |
+        run: |
           git status
           git add .
 
