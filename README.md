@@ -110,6 +110,7 @@ amount of memory required used by an algorithm
 - Used to measure the average case of the algorithm
 
 # Guided Examples of Run Time Analysis
+
 | Complexity                                               |        Name        |                                            Example |
 | :------------------------------------------------------- | :----------------: | -------------------------------------------------: |
 | ![](https://latex.codecogs.com/svg.image?O(1))           |      Constant      |           Adding element in front of a linked list |
@@ -120,6 +121,7 @@ amount of memory required used by an algorithm
 | ![](https://latex.codecogs.com/svg.image?O(n^3))         |       Cubic        |                              Matrix Multiplication |
 | ![](https://latex.codecogs.com/svg.image?O(2^n))         |    Exponential     |       Naive solution for the nth Fibonacci problem |
 | ![](https://latex.codecogs.com/svg.image?O(n!))          |     Factorial      |     Naive solution for travelling salesman problem |
+
 
 ---
 # Practical examples for all types
@@ -308,6 +310,8 @@ for (let i = 0; i < 10; i++) { // -- O(n)
   }
 }
 ```
+
+
 | i    |     j      | Execution |
 | :--- | :--------: | --------: |
 | 0    |            |         0 |
@@ -317,6 +321,7 @@ for (let i = 0; i < 10; i++) { // -- O(n)
 | 4    |  0,1,2,3   |         4 |
 | ...  |    ...     |       ... |
 | n    | 1....(n-1) |         n |
+
 
 **Pattern will be:** <br>
 
