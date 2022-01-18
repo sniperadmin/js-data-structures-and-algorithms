@@ -13,8 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
+
       - name: get changed files
         id: getfile
         run: |
@@ -52,6 +51,7 @@ jobs:
           labels: report, automated pr
           assignees: ${{ github.actor }}
           reviewers: ${{ github.actor }}
+
       - name: Check outputs
         run: |
           echo "Pull Request Number - ${{ env.PULL_REQUEST_NUMBER }}"
