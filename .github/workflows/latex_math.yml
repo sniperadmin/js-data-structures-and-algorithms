@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - uses: kinglittleq/markdown-latex-math-render@v0.1
         with:
           markdown-files: README.md # or md_files/README.md
