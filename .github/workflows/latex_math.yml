@@ -12,14 +12,13 @@ jobs:
     steps:
       - uses: kinglittleq/markdown-latex-math-render@v0.1
         with:
-          markdown-files: md_files/*.md # or md_files/README.md
+          markdown-files: README.md # or md_files/README.md
           output-dir: "."
 
       # commit changes and push
       - name: Commit
-      - id: git_commit
+        id: git_commit
         uses: zwaldowski/git-commit-action@v1
-      - run: echo "${{ steps.git_commit.outputs.sha }}"
+        run: echo "${{ steps.git_commit.outputs.sha }}"
 
-      - run: |
-          git push origin || echo "Done!"
+      - run: git push origin || echo "Done!"
