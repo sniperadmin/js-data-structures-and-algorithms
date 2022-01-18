@@ -51,6 +51,7 @@
       - [Circular Singly Linked List](#circular-singly-linked-list)
     - [Doubly Linked List](#doubly-linked-list)
     - [Circular Doubly Linked List](#circular-doubly-linked-list)
+  - [!block7]](#)
   - [Stack](#stack)
     - [LIFO Principle of Stack](#lifo-principle-of-stack)
       - [LIFO visualization](#lifo-visualization)
@@ -641,62 +642,16 @@ It is a dynamic data structure where each element (node) is made up of two items
 
 > Because the only ref for each node in the array is the node index itself, the array is stored in memory only in a consecutive memory location.
 
-```mermaid
-stateDiagram-v2
-  state Array-in-memory {
-    [*] --> [*]
-    a b c d e
-  }
-```
+![block1](./graphs/README.md.1.png)]
 
 ### Linked List visualization
 
-```mermaid
-  erDiagram
-    Node-001 ||--o{ Pointer-to-002 : links
-    Node-001 {
-        number value
-        number hash-002
-    }
-    Node-002 ||--o{ Pointer-to-002 : is
-    Node-002 {
-        number value
-        number hash-003
-    }
-```
+![block2](./graphs/README.md.2.png)]
 
 ### Linked List stored in memory
 It could be something like this. Each node is linked to the next one. but they are scattering in different memory slots.
 
-```mermaid
-stateDiagram-v2
-    direction LR
-    state fork_state <<fork>>
-      [*] --> fork_state
-      fork_state --> a001
-
-    state join_state <<join>>
-        join_state --> c003
-        fork_state --> c003
-        join_state --> d004
-        b002 --> fork_state
-        c003 --> d004
-        a001 --> b002
-        d004 --> [*]
-
-    state a001 {
-        a|b002
-    }
-    state b002 {
-        b|c003
-    }
-    state c003 {
-        c|d004
-    }
-    state d004 {
-        d
-    }
-```
+![block3](./graphs/README.md.3.png)]
 
 ### Types of linked lists
 - [x] Singly Linked List
@@ -708,176 +663,18 @@ stateDiagram-v2
 - Each node in the linked list stores the data of node and a reference to the next node.
 - Does not store references for previous nodes.
 
-```mermaid
-stateDiagram-v2
-direction LR
-0x001 --> 0x002 
-0x002 --> 0x003
-0x003 --> 0x004
-0x004 --> 0x005
-
-note right of 0x001
-    Head Node
-end note
-
-note left of 0x005
-    Tail Node
-end note
-
-state 0x001 {
-    direction LR
-    1 --> (0x002)
-}
-state 0x002 {
-    direction LR
-    2 --> (0x003)
-}
-state 0x003 {
-    direction LR
-    3 --> (0x004)
-}
-state 0x004 {
-    direction LR
-    4 --> (0x005)
-}
-state 0x005 {
-    direction LR
-    5 --> (0x006)
-}
-
-```
+![block4](./graphs/README.md.4.png)]
 
 #### Circular Singly Linked List
 - End node is connected to the first node
 
-```mermaid
-stateDiagram-v2
-direction LR
-0x001 --> 0x002 
-0x002 --> 0x003
-0x003 --> 0x004
-0x004 --> 0x005
-0x005 --> 0x001
-
-note right of 0x001
-    Head Node
-end note
-
-note left of 0x005
-    Tail Node
-end note
-
-state 0x001 {
-    direction LR
-    1 --> (0x002)
-}
-state 0x002 {
-    direction LR
-    2 --> (0x003)
-}
-state 0x003 {
-    direction LR
-    3 --> (0x004)
-}
-state 0x004 {
-    direction LR
-    4 --> (0x005)
-}
-state 0x005 {
-    direction LR
-    5 --> (0x001)
-}
-
-```
+![block5](./graphs/README.md.5.png)]
 
 ### Doubly Linked List
-```mermaid
-stateDiagram-v2
-direction LR
-0x001 --> 0x002 
-0x002 --> 0x003
-0x003 --> 0x004
-0x004 --> 0x005
-
-note right of 0x001
-    Head Node
-end note
-
-note left of 0x005
-    Tail Node
-end note
-
-state 0x001 {
-    direction LR
-    ~~ --> 1
-    1 --> next(0x002)
-}
-state 0x002 {
-    direction LR
-    prev(0x001) --> 2
-    2 --> next(0x003)
-}
-state 0x003 {
-    direction LR
-    prev(0x002) --> 3
-    3 --> next(0x004)
-}
-state 0x004 {
-    direction LR
-    prev(0x003) --> 4
-    4 --> (0x005)
-}
-state 0x005 {
-    direction LR
-    prev(0x004) --> 5
-    5 --> (0x001)
-}
-```
+![block6](./graphs/README.md.6.png)]
 
 ### Circular Doubly Linked List
-```mermaid
-stateDiagram-v2
-direction LR
-0x001 --> 0x002 
-0x002 --> 0x003
-0x003 --> 0x004
-0x004 --> 0x005
-0x005 --> 0x001
-
-note right of 0x001
-    Head Node
-end note
-
-note left of 0x005
-    Tail Node
-end note
-
-state 0x001 {
-    direction LR
-    ~~ --> 1
-    1 --> next(0x002)
-}
-state 0x002 {
-    direction LR
-    prev(0x001) --> 2
-    2 --> next(0x003)
-}
-state 0x003 {
-    direction LR
-    prev(0x002) --> 3
-    3 --> next(0x004)
-}
-state 0x004 {
-    direction LR
-    prev(0x003) --> 4
-    4 --> (0x005)
-}
-state 0x005 {
-    direction LR
-    prev(0x004) --> 5
-    5 --> (0x001)
-}
-```
+![block7](./graphs/README.md.7.png)]
 ---
 
 ## Stack
@@ -891,49 +688,7 @@ LIFO => Last In First Out
 - Removing an item is called pop
 
 #### LIFO visualization
-```mermaid
-flowchart TB
-    classDef transparent fill: transparent;
-
-    direction LR
-    pop-b3 --> pop-b3-result
-
-    subgraph push
-    direction TB
-    a1
-    end
-
-    subgraph pop
-    direction TB
-    .:::transparent
-    end
-
-    subgraph push-b
-    b1
-    end
-
-    subgraph push-b2
-    direction TB
-    block[b1]--> b2
-    end
-
-    subgraph push-b3
-    direction TB
-    first[b1]--> second[b2]
-    second[b2] --> third[b3]
-    end
-
-    subgraph pop-b3
-    direction TB
-    first-el[b1]--> second-el[b2]
-    second-el[b2] x-- X --x third-el[b3]:::error
-    end
-
-    subgraph pop-b3-result
-    direction TB
-    first-b[b1]--> second-b[b2]
-    end
-```
+![block8](./graphs/README.md.8.png)]
 
 ### Operations in Stack
 - [x] **Push**: Add element to the top of the stack.
