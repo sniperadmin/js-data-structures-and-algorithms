@@ -1,18 +1,20 @@
-name: "Compile Mermaid in Markdown"
+name: render-md-mermaid
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
-  build:
+  render-md-mermaid:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: render-md-mermaid
-        # You may pin to the exact commit or the version.
-        # uses: nielsvaneck/render-md-mermaid@5c0e9fb9aeb37ca82ef976acbf0365a7c3ea6029
+      - name: Render images for every Mermaid diagram in all Markdown files (*.md) in the repo
         uses: nielsvaneck/render-md-mermaid@v2
+
+      - name: Commit rendered png and svg files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: "*[.svg,.png]"
+          commit_message: automatically rendered mermaid diagrams
