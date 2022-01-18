@@ -15,6 +15,11 @@ jobs:
           markdown-files: README.md # or md_files/README.md
           output-dir: "."
 
+      - name: Stage changes
+      - run: |
+          git status
+          git add .
+
       # commit changes and push
       - name: Commit
         id: git_commit
