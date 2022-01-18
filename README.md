@@ -1,7 +1,7 @@
 <style type="text/css">
   .alert {
-    border: 1px solid red;
-    color: yellow;
+    border: 2px solid red;
+    color: blue;
   }
 </style>
 
