@@ -20,12 +20,6 @@ jobs:
         with:
           node-version: "14.x"
 
-      - name: run tsc
-      - run: /
-          yarn ci
-          yarn install -g typescript
-          yarn start
-
       - name: get changed files
         id: getfile
         run: |
