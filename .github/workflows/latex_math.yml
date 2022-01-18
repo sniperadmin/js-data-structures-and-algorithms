@@ -17,9 +17,9 @@ jobs:
 
       # commit changes and push
       - name: Commit
-        run: |
-          git config --global user.name 'Github Action Bot'
-          git config --global user.email 'bot@example.com'
-          git add *.md
-          git commit -m 'Render latex formulas'
-          git push origin || echo "No changes to commit"
+      - id: git_commit
+        uses: zwaldowski/git-commit-action@v1
+      - run: echo "${{ steps.git_commit.outputs.sha }}"
+
+      - run: |
+          git push origin || echo "Done!"
