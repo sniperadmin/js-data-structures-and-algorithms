@@ -58,6 +58,13 @@
       - [Circular Singly Linked List](#circular-singly-linked-list)
     - [Doubly Linked List](#doubly-linked-list)
     - [Circular Doubly Linked List](#circular-doubly-linked-list)
+  - [Stack](#stack)
+    - [LIFO Principle of Stack](#lifo-principle-of-stack)
+      - [LIFO visualization](#lifo-visualization)
+    - [Operations in Stack](#operations-in-stack)
+    - [Implementation option of stack](#implementation-option-of-stack)
+      - [Array implementation](#array-implementation)
+      - [Linked List implementation](#linked-list-implementation)
 
 ---
 
@@ -878,4 +885,101 @@ state 0x005 {
     5 --> (0x001)
 }
 ```
+---
 
+## Stack
+It is a data structure used to store a collection of objects in memory.
+
+### LIFO Principle of Stack
+
+LIFO => Last In First Out
+
+- Putting an item on top of the stack is called push
+- Removing an item is called pop
+
+#### LIFO visualization
+```mermaid
+flowchart TB
+    classDef transparent fill: transparent;
+
+    direction LR
+    pop-b3 --> pop-b3-result
+
+    subgraph push
+    direction TB
+    a1
+    end
+
+    subgraph pop
+    direction TB
+    .:::transparent
+    end
+
+    subgraph push-b
+    b1
+    end
+
+    subgraph push-b2
+    direction TB
+    block[b1]--> b2
+    end
+
+    subgraph push-b3
+    direction TB
+    first[b1]--> second[b2]
+    second[b2] --> third[b3]
+    end
+
+    subgraph pop-b3
+    direction TB
+    first-el[b1]--> second-el[b2]
+    second-el[b2] x-- X --x third-el[b3]:::error
+    end
+
+    subgraph pop-b3-result
+    direction TB
+    first-b[b1]--> second-b[b2]
+    end
+
+```
+
+### Operations in Stack
+- [x] **Push**: Add element to the top of the stack.
+- [x] **Pop**: Remove element from the top of the stack.
+- [x] **IsEmpty**: Check if stack is empty.
+- [x] **IsFull**: Check if stack is full.
+- [x] **Peek**: Get the value of the top element.
+
+### Implementation option of stack
+Stack can be implemented in two ways:
+- Using Array
+- Using linked list
+
+#### Array implementation
+**Pros**:
+- Easy implementation
+
+**Cons**
+- Fixed size
+
+**Methods**
+- push()
+- pop()
+- peek()
+- isEmpty()
+- isFull()
+- deleteStack()
+
+#### Linked List implementation
+**Pros**:
+- Variable Size
+
+**Cons**
+- Moderate to implement (hard setup)
+
+**Methods**
+- push()
+- pop()
+- peek()
+- isEmpty()
+- deleteStack()
