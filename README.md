@@ -940,7 +940,6 @@ flowchart TB
     direction TB
     first-b[b1]--> second-b[b2]
     end
-
 ```
 
 ### Operations in Stack
