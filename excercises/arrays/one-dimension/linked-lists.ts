@@ -113,7 +113,8 @@ class SinglyLinkedList extends LinkedList {
    * @returns {void}
    */
   public addAtIndex(index: number, data: number) {
-    if (index < 0 || index > this.size) return;
+    if (index < 0 || index > this.size) throw new Error("Invalid index: " + index);
+    ;
     if (index === 0) this.addAtHead(data)
     else if (index === this.size) this.addAtTail(data)
     else {
@@ -346,7 +347,128 @@ class CircularSinglyLinkedList extends LinkedList {
 }
 
 
+class DoublyLinkedList extends LinkedList {
+  /**
+   * @function addAtHead
+   * @argument {number} data
+   * @returns {void}
+   */
 
+  public addAtHead(data: number): void {
+    let newNode: SingleNode = new SingleNode(data);
+    if (!this.head) this.head = this.tail = newNode;
+    else {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+      this.head = newNode;
+    }
+    this.size++;
+  }
+
+  /**
+   * @function addAtIndex
+   * @argument {number} index
+   * @argument {number} data
+   * @returns {void}
+   */
+  public addAtIndex(index: number, data: number): void {
+    if (index < 0 || index > this.size) throw new Error("Invalid index: " + index);
+    if (index == 0) this.addAtHead(data)
+    if (index == this.size) this.addAtTail(data)
+    else {
+      let newNode: SingleNode = new SingleNode(data);
+      const prevNode = this.getNode(index - 1)
+      prevNode.next!.prev = newNode;
+      prevNode.next = newNode;
+      newNode.prev = prevNode;
+      newNode.next = prevNode.next;
+    }
+  }
+
+  /**
+   * @function addAtTail
+   * @argument {number} data
+   * @returns {void}
+   */
+  public addAtTail(data: number): void {
+    let newNode: SingleNode = new SingleNode(data);
+    if (!this.head) {
+      this.head = this.tail = newNode;
+    } else {
+      this.tail!.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
+    }
+    this.size++;
+  }
+
+  /**
+   * @function traverse
+   * @argument {number} data
+   * @returns {void}
+   */
+  traverse(data: number): void {
+    if (!this.head) throw new Error('Empty Circular List!');
+    console.log(this.head.data);
+    this.current = this.head.next
+
+    while (!this.current) {
+      console.log(this.current!.data);
+      this.current = this.current!.next;
+    }
+  }
+
+  /**
+   * @function search
+   * @argument {number} searchVal
+   * @returns {void}
+   */
+  public search(searchVal: number): Error | number {
+    if (!this.head) throw new Error('Empty Circular List!');
+    let index = 0;
+    this.current = this.head;
+    while (this.current) {
+      if (this.current.data === searchVal) return index;
+      this.current = this.current!.next;
+      index++;
+    }
+    throw new Error("Invalid search value!");
+  }
+
+  /**
+   * @function deleteAtIndex
+   * @argument {number} index
+   * @returns {void}
+   */
+  public deleteAtIndex(index: number): void {
+    if (index < 0 || index > this.size) throw new Error("Invalid index: " + index);
+    if (index == 0) {
+      this.head = this.head!.next
+      this.head!.prev = null
+    } else {
+      let prevNode = this.getNode(index - 1);
+      prevNode.next = prevNode.next!.next
+      if (prevNode.next!.next) prevNode.next!.next.prev = prevNode;
+      if (this.size === index - 1) this.tail = prevNode;
+    }
+    this.size--;
+  }
+
+  /**
+   * @function deleteEntireList
+   * @returns {void}
+   */
+  public deleteEntireList(): void {
+    if (!this.head) throw new Error('Empty List!');
+    this.current = this.head
+    while (this.current) {
+      let cachedCurrent = this.current
+      this.current = this.current.next;
+      cachedCurrent.next = null
+    }
+    this.head = this.tail = null
+  }
+}
 
 /**
  * Trying classes
