@@ -2,6 +2,8 @@ name: "Compile Mermaid"
 
 on:
   push:
+    branches:
+      - master
     paths:
       - "**/*.mermaid"
       - "**/*.mmd"
@@ -13,6 +15,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+
+      - name: run tsc
+      - run: /
+          yarn ci
+          yarn install -g typescript
+          yarn start
 
       - name: get changed files
         id: getfile
