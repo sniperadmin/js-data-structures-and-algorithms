@@ -2,8 +2,8 @@ name: "Compile Mermaid in Markdown"
 
 on:
   push:
-    paths:
-      - "**/*.md"
+    branches:
+      - master
 
 jobs:
   build:
