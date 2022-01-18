@@ -4,6 +4,8 @@ Data Structures and Algorithms in JavaScript / TypeScript
 
 By: Nasr Galal / @sniperadmin
 
+![](https://img.shields.io/badge/WIP-Work%20in%20progress-orange)
+
 <h4>
 This is the most comprehensive explanation for the data structures and algorithms in TypeScript.
 
