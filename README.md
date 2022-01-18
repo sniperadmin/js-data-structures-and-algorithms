@@ -1,28 +1,21 @@
-<style type="text/css">
-  .alert {
-    border: 2px solid red;
-    color: blue;
-  }
-</style>
-
 - [Run Time Analysis](#run-time-analysis)
   - [Time Factor (Time complexity)](#time-factor-time-complexity)
   - [Space Factor (Space complexity)](#space-factor-space-complexity)
 - [Notations for Run Time Analysis](#notations-for-run-time-analysis)
-  - [Omega Notation ![](https://latex.codecogs.com/svg.image?Ω(n))](#omega-notation-ωn)
-  - [Big O notation ![](https://latex.codecogs.com/svg.image?O(n))](#big-o-notation-on)
-  - [Theta notation ![](https://latex.codecogs.com/svg.image?Θ(n))](#theta-notation-θn)
+  - [Omega Notation !)](#omega-notation-)
+  - [Big O notation !)](#big-o-notation-)
+  - [Theta notation !)](#theta-notation-)
 - [Guided Examples of Run Time Analysis](#guided-examples-of-run-time-analysis)
 - [Practical examples for all types](#practical-examples-for-all-types)
-  - [Constant time ![](https://latex.codecogs.com/svg.image?O(1))](#constant-time-o1)
-  - [Linear time ![](https://latex.codecogs.com/svg.image?O(n))](#linear-time-on)
-  - [Logarithmic Time ![](https://latex.codecogs.com/svg.image?O(log%20n))](#logarithmic-time-olog-n)
-  - [Linear Logarithmic Time: ![](https://latex.codecogs.com/svg.image?O(n%20log%20n))](#linear-logarithmic-time-on-log-n)
-  - [Quadratic Time: ![](https://latex.codecogs.com/svg.image?O(n^2))](#quadratic-time-on2)
-  - [Cubic Time: ![](https://latex.codecogs.com/svg.image?O(n^3))](#cubic-time-on3)
-  - [Exponential Time ![](https://latex.codecogs.com/svg.image?O(2n))](#exponential-time-o2n)
+  - [Constant time !)](#constant-time-)
+  - [Linear time !)](#linear-time-)
+  - [Logarithmic Time !)](#logarithmic-time-)
+  - [Linear Logarithmic Time: !)](#linear-logarithmic-time-)
+  - [Quadratic Time: !)](#quadratic-time-)
+  - [Cubic Time: !)](#cubic-time-)
+  - [Exponential Time !)](#exponential-time-)
   - [(Example => brute forcing algorithm [Backtracking])](#example--brute-forcing-algorithm-backtracking)
-  - [Factorial Time ![](https://latex.codecogs.com/svg.image?O(n!))](#factorial-time-on)
+  - [Factorial Time !)](#factorial-time-)
 - [Digging deeper in calculation of time complexity](#digging-deeper-in-calculation-of-time-complexity)
   - [Example #1](#example-1)
   - [Example #2](#example-2)
@@ -99,16 +92,16 @@ amount of memory required used by an algorithm
 - Used to measure the average case of the algorithm
 
 # Guided Examples of Run Time Analysis
-| Complexity   |        Name        |                                            Example |
-| :----------- | :----------------: | -------------------------------------------------: |
-| ![](https://latex.codecogs.com/svg.image?O(1))       |      Constant      |           Adding element in front of a linked list |
-| ![](https://latex.codecogs.com/svg.image?O(log%20n))   |    Logarithmic     | Searching an element in a sorted arr / linked list |
-| ![](https://latex.codecogs.com/svg.image?O(n))       |       Linear       |              Searching element in a unsorted array |
+| Complexity                                               |        Name        |                                            Example |
+| :------------------------------------------------------- | :----------------: | -------------------------------------------------: |
+| ![](https://latex.codecogs.com/svg.image?O(1))           |      Constant      |           Adding element in front of a linked list |
+| ![](https://latex.codecogs.com/svg.image?O(log%20n))     |    Logarithmic     | Searching an element in a sorted arr / linked list |
+| ![](https://latex.codecogs.com/svg.image?O(n))           |       Linear       |              Searching element in a unsorted array |
 | ![](https://latex.codecogs.com/svg.image?O(n%20log%20n)) | Linear algorithmic |                               Merge sort algorithm |
-| ![](https://latex.codecogs.com/svg.image?O(n^2))     |     Quadratic      |          shortest path between 2 points in a graph |
-| ![](https://latex.codecogs.com/svg.image?O(n^3))     |       Cubic        |                              Matrix Multiplication |
-| ![](https://latex.codecogs.com/svg.image?O(2^n))     |    Exponential     |       Naive solution for the nth Fibonacci problem |
-| ![](https://latex.codecogs.com/svg.image?O(n!))      |     Factorial      |     Naive solution for travelling salesman problem |
+| ![](https://latex.codecogs.com/svg.image?O(n^2))         |     Quadratic      |          shortest path between 2 points in a graph |
+| ![](https://latex.codecogs.com/svg.image?O(n^3))         |       Cubic        |                              Matrix Multiplication |
+| ![](https://latex.codecogs.com/svg.image?O(2^n))         |    Exponential     |       Naive solution for the nth Fibonacci problem |
+| ![](https://latex.codecogs.com/svg.image?O(n!))          |     Factorial      |     Naive solution for travelling salesman problem |
 
 ---
 # Practical examples for all types
@@ -204,10 +197,9 @@ function merge() {// -- O(n)}
 **substitute n by n/4 in eq.1** <br>
 ![](https://latex.codecogs.com/svg.image?T(n/4)%20=%202%20T(n/8)%20+%20n/4) **---->> eq.3**<br>
 
-<div class="alert">
-  <b>Pattern will be: </b> <br>
+**Pattern will be:** <br>
   ![](https://latex.codecogs.com/svg.image?T(n)%20=%202^i%20*%20T(n/2^i)%20+%20i%20*%20n) <br>
-</div>
+<br>
 
 let ![](https://latex.codecogs.com/svg.image?n/2^i%20=%201) <br>
 
@@ -219,11 +211,11 @@ let ![](https://latex.codecogs.com/svg.image?n/2^i%20=%201) <br>
 
 after substituting in the discovered pattern
 
-<div class="alert">
-  <b>Pattern will be: </b> <br>
-  TC => O(n*log(n)) <br>
-  SC => O(n)
-</div>
+
+**Pattern will be:** <br>
+
+TC => O(n*log(n)) <br>
+SC => O(n)
 
 ---
 
@@ -305,9 +297,7 @@ for (let i = 0; i < 10; i++) { // -- O(n)
 | ...  |    ...     |       ... |
 | n    | 1....(n-1) |         n |
 
-<div class="alert">
-<p>Result will be</p>
-</div>
+**Pattern will be:** <br>
 
 ![](https://latex.codecogs.com/svg.image?1+2+3+4+5+6+n%20=%20n(n-1)/2%20=%20(n^2%20+%20n)/2) <br>
 
@@ -352,14 +342,14 @@ for (let i = 0; i < n; i *=2) { // -- O(n)
 }
 ```
 
-| i    |   j   |
-| :--- | :---: |
-| 0    |       |
+| i    |                       j                       |
+| :--- | :-------------------------------------------: |
+| 0    |                                               |
 | 1    | ![](https://latex.codecogs.com/svg.image?2^1) |
 | 2    | ![](https://latex.codecogs.com/svg.image?2^2) |
 | 3    | ![](https://latex.codecogs.com/svg.image?2^3) |
 | 4    | ![](https://latex.codecogs.com/svg.image?2^4) |
-| ...  |  ...  |
+| ...  |                      ...                      |
 | k    | ![](https://latex.codecogs.com/svg.image?2^k) |
 
 Taking the stop condition if i >= n
@@ -379,14 +369,14 @@ for (let i = 0; i <= 1; i /=2) { // -- O(n)
 }
 ```
 
-| i    |    j    |
-| :--- | :-----: |
-| 0    |         |
+| i    |                        j                        |
+| :--- | :---------------------------------------------: |
+| 0    |                                                 |
 | 1    | n/![](https://latex.codecogs.com/svg.image?2^1) |
 | 2    | n/![](https://latex.codecogs.com/svg.image?2^2) |
 | 3    | n/![](https://latex.codecogs.com/svg.image?2^3) |
 | 4    | n/![](https://latex.codecogs.com/svg.image?2^4) |
-| ...  | n/ ...  |
+| ...  |                     n/ ...                      |
 | k    | n/![](https://latex.codecogs.com/svg.image?2^k) |
 
 Taking the stop condition if i < 1
