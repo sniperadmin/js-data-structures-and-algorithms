@@ -126,6 +126,7 @@ amount of memory required used by an algorithm
 ---
 ## Logarithmic Time ![](https://latex.codecogs.com/svg.image?O(log%20n))
   - Algo than has running time O(log n) si slightly faster than O(n) [Example Binary Search algo]
+
   ```js
   const binarySearch = function (nums, target) { // -- T(n)
     let left = 0; // --- O(1)
@@ -148,6 +149,8 @@ amount of memory required used by an algorithm
   }
 
   ```
+---
+
 To calculate time complexity <br>
   1....... ![](https://latex.codecogs.com/svg.image?length%20=%20n%20=%20n/2^0) <br>
   2....... ![](https://latex.codecogs.com/svg.image?length%20=%20n%20=%20n/2^1) <br>
@@ -639,7 +642,7 @@ It is a dynamic data structure where each element (node) is made up of two items
 > Because the only ref for each node in the array is the node index itself, the array is stored in memory only in a consecutive memory location.
 
 ```mermaid
-  stateDiagram-v2
+stateDiagram-v2
   state Array-in-memory {
     [*] --> [*]
     a b c d e
@@ -666,8 +669,8 @@ It is a dynamic data structure where each element (node) is made up of two items
 It could be something like this. Each node is linked to the next one. but they are scattering in different memory slots.
 
 ```mermaid
-  stateDiagram-v2
-direction LR
+stateDiagram-v2
+    direction LR
     state fork_state <<fork>>
       [*] --> fork_state
       fork_state --> a001
