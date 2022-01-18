@@ -1,3 +1,19 @@
+<h1>
+Data Structures and Algorithms in JavaScript / TypeScript
+</h1>
+
+<h3>
+This is the most comprehensive explanation for the data structures and algorithms in TypeScript.
+
+for the best experience, feel free to visit the full page here:
+
+[Link for the full page]([https://link](https://sniperadmin.github.io/js-data-structures-and-algorithms/))
+</h3>
+
+---
+
+# Material contents
+- [Material contents](#material-contents)
 - [Run Time Analysis](#run-time-analysis)
   - [Time Factor (Time complexity)](#time-factor-time-complexity)
   - [Space Factor (Space complexity)](#space-factor-space-complexity)
@@ -51,7 +67,7 @@
       - [Circular Singly Linked List](#circular-singly-linked-list)
     - [Doubly Linked List](#doubly-linked-list)
     - [Circular Doubly Linked List](#circular-doubly-linked-list)
-  - [!block7]](#)
+  - [!block7](#)
   - [Stack](#stack)
     - [LIFO Principle of Stack](#lifo-principle-of-stack)
       - [LIFO visualization](#lifo-visualization)
@@ -59,7 +75,6 @@
     - [Implementation option of stack](#implementation-option-of-stack)
       - [Array implementation](#array-implementation)
       - [Linked List implementation](#linked-list-implementation)
-
 ---
 
 # Run Time Analysis
@@ -642,16 +657,16 @@ It is a dynamic data structure where each element (node) is made up of two items
 
 > Because the only ref for each node in the array is the node index itself, the array is stored in memory only in a consecutive memory location.
 
-![block1](./graphs/README.md.1.png)]
+![block1](./graphs/README.md.1.png)
 
 ### Linked List visualization
 
-![block2](./graphs/README.md.2.png)]
+![block2](./graphs/README.md.2.png)
 
 ### Linked List stored in memory
 It could be something like this. Each node is linked to the next one. but they are scattering in different memory slots.
 
-![block3](./graphs/README.md.3.png)]
+![block3](./graphs/README.md.3.png)
 
 ### Types of linked lists
 - [x] Singly Linked List
@@ -663,18 +678,18 @@ It could be something like this. Each node is linked to the next one. but they a
 - Each node in the linked list stores the data of node and a reference to the next node.
 - Does not store references for previous nodes.
 
-![block4](./graphs/README.md.4.png)]
+![block4](./graphs/README.md.4.png)
 
 #### Circular Singly Linked List
 - End node is connected to the first node
 
-![block5](./graphs/README.md.5.png)]
+![block5](./graphs/README.md.5.png)
 
 ### Doubly Linked List
-![block6](./graphs/README.md.6.png)]
+![block6](./graphs/README.md.6.png)
 
 ### Circular Doubly Linked List
-![block7](./graphs/README.md.7.png)]
+![block7](./graphs/README.md.7.png)
 ---
 
 ## Stack
@@ -688,7 +703,7 @@ LIFO => Last In First Out
 - Removing an item is called pop
 
 #### LIFO visualization
-![block8](./graphs/README.md.8.png)]
+![block8](./graphs/README.md.8.png)
 
 ### Operations in Stack
 - [x] **Push**: Add element to the top of the stack.
