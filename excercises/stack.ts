@@ -23,13 +23,14 @@ class StackUsingArray {
   }
 
   public pop() {
+    const char = this.array[this.topOfStack];
     if (this.topOfStack == -1) throw new Error("Stack Underflow!");
     else {
       let temp = this.array[this.topOfStack];
       this.array[this.topOfStack] = null;
       this.topOfStack--;
     }
-    return this.array
+    return char
   }
   public peek() {
     if (this.topOfStack == -1) throw new Error("Empty Stack!")
@@ -193,6 +194,7 @@ class HashTable {
   }
 }
 
+
 function parentheses(input: string): boolean {
   const hashTable: HashTable = new HashTable()
   hashTable.set('(', '(')
@@ -202,8 +204,33 @@ function parentheses(input: string): boolean {
   hashTable.set('}', '}')
   hashTable.set(']', ']')
 
+  // define stack class
   const stack = new StackUsingArray()
+  // create stack
   stack.createStack(input.length)
+
+  const inputArr = input.split('')
+
+  // push elements
+  inputArr.map(i => {
+    stack.push(i)
+  })
+
+  console.log(stack.pop());
+  // looping
+  inputArr.forEach(i => {
+    if (hashTable.get(i)) {
+      const pop = stack.pop()
+      console.log(hashTable.get(i))
+      console.log(pop)
+      if (pop !== hashTable.get(i)) return false;
+      else stack.push(i)
+    }
+  })
+  console.log(stack)
+  return stack.isEmpty()
 }
 
-console.log(parentheses('()[]{}'))
+console.log(parentheses('([])'))
+
+// -------------------------------------------------------------
