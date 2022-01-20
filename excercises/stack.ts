@@ -234,3 +234,92 @@ function parentheses(input: string): boolean {
 console.log(parentheses('([])'))
 
 // -------------------------------------------------------------
+
+// Problem #2
+/**
+ * Given a coded string like these 3[a]2[bc]
+ *  It should be decoded to be aaaabcbc
+ * 
+ * Solution: This could be achieved using two stack approach
+ * numStack and strStack
+ */
+
+function isDigit(char: string) {
+  const trimmed = char.trim()
+  return !isNaN(Number(trimmed) * 1) && trimmed !== ''
+}
+
+class StringBuilder {
+  strArray: Array<string>;
+  constructor() {
+    this.strArray = new Array<string>()
+  }
+
+  get(index: number): string {
+    let str: string | null = null
+    if ((this.strArray.length > index) && (index >= 0)) {
+      str = this.strArray[index]
+    }
+    return str!
+  }
+
+  isEmpty(): boolean {
+    return !this.strArray.length
+  }
+
+  append(str: string): string[] {
+    this.strArray.push(str!)
+    return this.strArray
+  }
+
+  toString(): string {
+    return this.strArray.join('')
+  }
+
+  toArrayString(delimiter: string): string {
+    return this.strArray.join(delimiter)
+  }
+
+  clear() {
+    this.strArray.length = 0
+  }
+}
+
+function decodeString(str: string): void {
+  const numStack: StackUsingArray = new StackUsingArray()
+  const strStack: StackUsingArray = new StackUsingArray()
+
+  numStack.createStack(str.length)
+  strStack.createStack(str.length)
+
+  let sb: StringBuilder = new StringBuilder()
+  const len: number = str.length
+  const chars: string[] = str.split('')
+
+  return chars.forEach((char: string, index): string => {
+    if (isDigit(char)) {
+      let num = Number(char)
+
+      while (index && isDigit(str.charAt(index))) {
+        num = num * 10 + Number(str.charAt(index + 1))
+      }
+      numStack.push(num)
+    } else if (char == '[') {
+      strStack.push(sb.toString())
+      sb.clear()
+    } else if (char == ']') {
+      numStack.peek()
+      const repeatedChars = numStack.pop()
+      let tmp = new StringBuilder()
+      tmp.append(strStack.pop())
+
+      for (let i = 0; i < repeatedChars; i++) tmp.append(sb.toString());
+      sb = tmp;
+    } else {
+      sb.append(char)
+    }
+    return sb.toString()
+  })
+}
+
+console.log(decodeString('afd2[f]a'))
